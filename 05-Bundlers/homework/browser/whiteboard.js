@@ -1,5 +1,8 @@
-(function () {
-  window.whiteboard = new window.EventEmitter();
+// let EventEmitter = requiere("./event-emitter")// common js
+  import EventEmitter from "./event-emitter"; //ESC6
+
+ export let whiteboard = new EventEmitter();//ESC6
+//  exports.whiteboard = new EventEmitter() //common js
 
   // Ultimately, the color of our stroke;
   var color;
@@ -106,4 +109,3 @@
       whiteboard.emit("draw", start, end, strokeColor);
     }
   };
-})();

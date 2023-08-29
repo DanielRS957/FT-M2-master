@@ -1,8 +1,6 @@
-(function () {
-  window.EventEmitter = EventEmitter;
 
   // our EventEmitter constructor function
-  function EventEmitter() {
+ export default function EventEmitter() { // ESC6 DEFAUL ES POR QUE ES UNA SOLA FUNCION QUE SE EXPORTA SI HUBIERAN MAS NO PODRIA DECLARARCE DEFAUL
     this.subscribers = {};
   }
 
@@ -37,4 +35,5 @@
       listener.apply(null, remainingArgs);
     });
   };
-})();
+
+// module.exports= {EventEmitter}// COMMON JS BACK END

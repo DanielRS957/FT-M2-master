@@ -1,6 +1,11 @@
-(function () {
-  var whiteboard = window.whiteboard;
-  var socket = window.io(window.location.origin);
+
+  // var whiteboard = require(whiteboard);  //sintaxis common js
+  import {whiteboard} from "./whiteboard" ;//sintaxis ESC6
+// let  io = require("socket.io-client") // sintaxis de common js
+  import io from "socket.io-client" // sintaxis ESC6
+  
+
+  var socket = io(window.location.origin);
 
   socket.on("connect", function () {
     console.log("Connected!");
@@ -22,4 +27,4 @@
   whiteboard.on("draw", function (start, end, color) {
     socket.emit("draw", start, end, color);
   });
-})();
+
